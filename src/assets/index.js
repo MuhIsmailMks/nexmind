@@ -1,0 +1,23 @@
+import logo from './logo.png';
+import heroimage from './heroImage.svg';
+import bghero from './bgHero.svg';
+import star from './star.svg';
+import contextIcon from './context-icon.svg';
+import formatIcon from './format-icon.svg';
+import privacyIcon from './privacy-icon.svg';
+import searchIcon from './search-icon.svg';
+import citationIcon from './citation-icon.svg';
+import arrow from './arrow.svg';
+import smartDocument from './smart-document.png';
+import dashboard from './dashboard.png';
+import tick from './tick.svg';
+import proIcon from './proIcon.svg';
+import teamIcon from './teamIcon.svg';
+import min from './min.svg';
+import plus from './plus.svg';
+import starter from './starter.png';
+import windows from './windows-icon.svg';
+import apple from './apple-icon.svg';
+import starReview from './star-icon.svg';
+
+export { logo, heroimage, bghero, star, arrow, smartDocument, dashboard, tick, proIcon, teamIcon, starter, min, plus, contextIcon, formatIcon, privacyIcon, citationIcon, searchIcon, windows, apple, starReview };

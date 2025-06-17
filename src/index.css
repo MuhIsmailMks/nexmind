@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page: #000510;
+  --color-primary: #4a3be4;
+  --color-colortext: #dbdbdb;
+  --color-gradient-text: #cfdaff;
+
+  --font-sans: "Inter", sans-serif;
+  --font-sora: "Sora", sans-serif;
+  --font-anybody: "Anybody", sans-serif;
+
+  --text-ss: 10px;
+  --text-s: 14px;
+  --text-m: 16px;
+  --text-l: 18px;
+  --text-xl: 20px;
+  --text-xxl: 25px;
+  --text-smalltitle: 30px;
+  --text-title: 48px;
+
+  --spacing-base: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global utility override using Tailwind's @apply */
+
+/* utils */
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.gradient-primary {
+  @apply bg-gradient-to-r from-[#4A3BE4] to-[#3BA3E4] rounded-[100px];
+}
+
+.text-gradient-primary {
+  @apply bg-gradient-to-l from-gradient-text 
+     via-gradient-text  to-primary  bg-clip-text text-transparent;
+}
+
+.line-gradient {
+  @apply from-page via-primary 
+    to-page;
+}
+
+.lg-hidden {
+  @apply lg:hidden lg:absolute lg:opacity-0;
+}
+
+.bg-blur-round {
+  @apply blur-3xl bg-[#2770FF1A] rounded-full w-[50%] lg:w-[40%] aspect-square max-w-[1500px];
+}
+
+.bg-blur-large {
+  @apply blur-3xl bg-[#2770FF1A] rounded-full w-[90%] h-[240px] max-w-[1500px];
+}
+
+.bg-blur-medium {
+  @apply  blur-3xl bg-[#2770FF1A] rounded-full w-[50%] md:h-[240px] max-w-[1500px] z-0;
+}
+ 
+/* navbar */
+.header-navbar::before {
+  content: "";
+  @apply left-0 top-0 w-full h-full backdrop-blur-md bg-[#0e0e0e5b] absolute lg:hidden;
+}
+
+.menu span {
+  @apply w-full h-1 bg-white
+     rounded-full;
+}
+
+nav ul li {
+  @apply w-full lg:w-auto flex justify-center;
+}
+
+/* about */
+.card-about-container .card {
+  @apply bg-gradient-to-t from-[#493be46e] via-[#1511416e] to-[#06003a13] border-[1px] border-[#0e093a];
+  box-shadow: 1px 0px 8px 0px #0b016524 inset;
+}
+
+.card-about-container .card .number {
+  @apply bg-gradient-to-t from-[#0b016529] 
+       to-[#0b016510] border-[1px] border-[#100c36] rounded-full;
+}
+
+.card-about-container .card span {
+  @apply bg-gradient-to-b from-[#ffffffa2] 
+       to-[#ffffff5e] bg-clip-text text-transparent;
+}
+
+/* interface */
+.dashboard-image {
+  box-shadow: 0px 13px 70px 0px #2770ff1f;
+}
+
+.featureCard {
+  background: linear-gradient(149.74deg, #0a0a0f 17.18%, #313149 227.36%);
+
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    132.08deg,
+    rgba(78, 54, 86, 0.8) 19%,
+    rgba(68, 49, 73, 0.5) 81%
+  );
+}
+.featureCard .icon {
+  background: linear-gradient(135deg, #323548 0%, #0d0d0d 100%);
+}
+
+
+/* testimonials */
+.testimoni-user{
+  background: linear-gradient(253.29deg, #0A0822 27.17%, #050606 96.51%);
+}
+
+/* faq */
+.faq-accordion > :last-child{
+  @apply border-b-2;
+}
+
+.faq-accordion .faq-content{
+background: linear-gradient(149.51deg, #000311 -5.15%, #313349 226.88%);
+}
+ 
+ 
+.lucide,
+[data-state="open"]::after,
+[data-state="closed"]::after {
+  @apply hidden absolute z-[-99] ;
+  content: ""; 
+}
+ 
+
+.faq-btn .plus-icon {
+  display: block;
+}
+
+.faq-btn .minus-icon {
+  display: none;
+}
+  
+.faq-btn[data-state="open"] .plus-icon {
+  display: none;
+}
+
+.faq-btn[data-state="open"] .minus-icon {
+  display: block;
+}
+
+/* starter */
+.starter{
+  background: linear-gradient(144.77deg, #0F1014 20.69%, #1C1F30 185.46%);
+}
+
+
+/* price */
+.price-cards-container .price-card{
+  border: 1px solid #222035; 
+}
+
+.price-cards-container .price-card:nth-child(1) {
+  @apply bg-[#0b0a0f];
+}
+
+.price-cards-container .price-card:nth-child(2),
+.price-cards-container .price-card:nth-child(3) {
+  background: linear-gradient(180deg, #353149 -95%, #0b0a0f 100%);
+}
+
+.price-cards-container .price-card:nth-child(1) .icon-container .icon {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.02)
+    ),
+    linear-gradient(
+      92deg,
+      rgba(16, 141, 81, 0.2) 15.83%,
+      rgba(23, 23, 23, 0.2) 63.01%
+    );
+}
+
+.price-cards-container .price-card:nth-child(2) .icon-container .icon {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    linear-gradient(
+      92deg,
+      rgba(112, 136, 216, 0.3) 15.83%,
+      rgba(23, 23, 23, 0.3) 63.01%
+    ),
+    radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ) 
+}
+
+.price-cards-container .price-card:nth-child(3) .icon-container .icon {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.02)
+    ),
+    linear-gradient(
+      92deg,
+      rgba(94, 106, 210, 0.2) 15.83%,
+      rgba(23, 23, 23, 0.2) 63.01%
+    );
+}
+
+
+/* footer */
+footer{
+  background: radial-gradient(235.88% 108.67% at 50% -3.6%, #010816 45.67%, rgba(74, 59, 228, 0.5) 99.99%, #FFFFFF 100%);
+}
+
+/* Default state */
+.button-hover .image img {
+  @apply transition-all duration-200 ease-in-out absolute;
+}
+
+/* ICON 1 */
+.button-hover .image .icon1 {
+  @apply top-0 left-0 z-[1];
+}
+
+.button-hover:hover .image .icon1 {
+  @apply -top-full left-full;
+  transition-delay: 0s;
+}
+
+.button-hover:not(:hover) .image .icon1 {
+  transition-delay: 0.1s;
+}
+
+/* ICON 2 */
+.button-hover .image .icon2 {
+  @apply top-full -left-full z-0;
+  transition-delay: 0s;
+}
+
+.button-hover:hover .image .icon2 {
+  @apply top-0 left-0;
+  transition-delay: 0.1s;
+}
+
+.button-hover:not(:hover) .image .icon2 {
+  @apply top-full -left-full;
+  transition-delay: 0s;
+}
+
