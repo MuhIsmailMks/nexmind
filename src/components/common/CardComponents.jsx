@@ -4,6 +4,7 @@ import { starter, tick } from "../../assets";
 import { textVariants } from "../ui/text";
 import { Button } from "../ui/button";
 import { ButtonArrow } from "./Icon";
+import FadeInOnScroll from "./FadeInScroll";
 
 export const AboutCardComponents = ({ number, title, about, image }) => {
   return (
@@ -143,21 +144,27 @@ export const Starter = ({}) => {
         className={"w-full lg:w-[55%] xl:w-[678px]"}
         gap={"md"}
       >
-        <h4
+        <FadeInOnScroll >
+           <h4
           className={` text-center lg:text-left ${textVariants({
             intent: "title",
           })}`}
         >
           Start your smarter research today
         </h4>
-        <p className={` text-center lg:text-left `}>
+        </FadeInOnScroll>
+       <FadeInOnScroll delay={'.5'}>
+         <p className={` text-center lg:text-left `}>
           Don't waste time on search engines. Let AI help you research smarter.
           Start for free , No credit card required
         </p>
+       </FadeInOnScroll>
       </Container>
 
       <div className="image w-[80%] lg:w-[40%]  xl:w-[345px] h-auto">
-        <img src={starter} alt="starter image" className="w-full" />
+        <FadeInOnScroll direction="zoom-in">
+          <img src={starter} alt="starter image" className="w-full" />
+        </FadeInOnScroll>
       </div>
 
       <div className="absolute bottom-[-10%] right-[-20%] bg-blur-medium"></div>

@@ -63,7 +63,7 @@ const Footer = () => {
                 <img src={logo} alt="" className='w-12'/>
                 <p>NexMind 2025</p>
             </div>
-            <p className='font-sora w-full'>Empowering your research journey with your own AI-driven assistant.</p>
+            <p className='font-sora w-full'>Empowering your research journey with your own AI-driven assistant.</p> 
         </div>
         
         {/* links footer */}

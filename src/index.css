@@ -169,7 +169,7 @@ nav ul li {
 
 
 /* faq */
-.faq-accordion > :last-child{
+.faq-accordion .faq-content-container > :last-child{
   @apply border-b-2;
 }
 

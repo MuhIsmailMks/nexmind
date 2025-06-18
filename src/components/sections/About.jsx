@@ -5,8 +5,8 @@ import { Button } from "../ui/button";
 import { ButtonArrow } from "../common/Icon"; 
 import { LineWsize } from "../common/Line";
 import { AboutCardComponents } from "../common/CardComponents";
-import { smartDocument, summaries, askPDF } from "../../assets";
-
+import { smartDocument, summaries, askPDF } from "../../assets"; 
+import FadeInOnScroll from "../common/FadeInScroll";
    
 const About = () => {
   return (
@@ -18,15 +18,20 @@ const About = () => {
         layout={"flexcolcenter"}
         className="about-content"
       >
-        <h2
-          className={`text-center text-gradient-primary ${textVariants({
-            intent: "title",
-          })}`}
-        >
-         AI-Powered Solutions for Accelerated Business Growth
-        </h2>
 
-        <p className={`${textVariants({ intent: "largetext", leading: "lg", size:'commonText' })}`} > Our
+        <FadeInOnScroll delay={'.5'}>
+
+          <h2
+                    className={`text-center text-gradient-primary ${textVariants({
+                      intent: "title",
+                    })}`}
+                  >
+                  AI-Powered Solutions for Accelerated Business Growth
+        </h2>
+        </FadeInOnScroll>
+
+        <FadeInOnScroll delay={'1'}>
+          <p className={`${textVariants({ intent: "largetext", leading: "lg", size:'commonText' })}`} > Our
            <span className="text-primary"> AI-powered </span> 
           assistant is designed to help you research faster,
           smarter, and more efficiently. Whether you're analyzing academic
@@ -37,10 +42,12 @@ const About = () => {
           Say goodbye to hours of manual reading. Let AI handle the heavy
           lifting while you focus on critical thinking and innovation.
         </p>
+        </FadeInOnScroll>
 
         <LineWsize width='w-[90%] lg:w-[1000px]'/>
 
-        <Button
+        <FadeInOnScroll delay={'1'}>
+          <Button
           variant="primary"
           size="lg"
           text={"md"}
@@ -49,11 +56,20 @@ const About = () => {
           Learn more
           <ButtonArrow />
         </Button>
+        </FadeInOnScroll>
 
         <Container layout={'centered'} gap={'sm'} className={'card-about-container '}>
-          <AboutCardComponents number={'1'} title={'Smart Document Analysis'} about={'Understand any paper in seconds — not hours.'} image={smartDocument}/>
-          <AboutCardComponents number={'2'} title={'AI-Powered Summaries'} about={'Get clean, concise insights from long texts.'} image={summaries}/>
-          <AboutCardComponents number={'3'} title={'Smart Document Analysis'} about={'Chat with your research documents like you would with an expert.'} image={askPDF}/>
+          <FadeInOnScroll delay={'1'}>
+            <AboutCardComponents number={'1'} title={'Smart Document Analysis'} about={'Understand any paper in seconds — not hours.'} image={smartDocument}/>
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={'1.2'}>
+            <AboutCardComponents number={'2'} title={'AI-Powered Summaries'} about={'Get clean, concise insights from long texts.'} image={summaries}/>
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={'1.4'}>
+            <AboutCardComponents number={'3'} title={'Smart Document Analysis'} about={'Chat with your research documents like you would with an expert.'} image={askPDF}/>
+          </FadeInOnScroll>
+         
+         
         </Container>
 
       </Container>

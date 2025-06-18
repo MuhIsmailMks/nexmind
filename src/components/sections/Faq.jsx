@@ -7,6 +7,7 @@ import { LineWsize } from "../common/Line";
 import { AboutCardComponents, PriceCard } from "../common/CardComponents";
 import { min, plus } from "../../assets";
 import { FaqUser } from "../features/FaqUser";
+import FadeInOnScroll from "../common/FadeInScroll";
 
 
 const faqList = [
@@ -56,15 +57,18 @@ const Faq = () => {
         layout={"flexcol"}
         className="about-faq w-[90%] md:w-[624px] lg:pr-10 h-full z-10 items-center xl:items-start">
 
-        <h2
+        <FadeInOnScroll >
+           <h2
           className={`text-center lg:text-left text-gradient-primary xl:w-[500px] ${textVariants({
             intent: "title",
           })}`}
         >
           Frequently asked questions
         </h2>
+        </FadeInOnScroll>
 
-        <p
+      <FadeInOnScroll delay={'.5'}>
+          <p
           className={`text-center text-colortext lg:text-left   xl:w-[500px] ${textVariants({
             intent: "largetext",
             leading: "lg",
@@ -73,8 +77,10 @@ const Faq = () => {
         >
         Got questions? We've got answers. Learn more about how our AI research assistant works, what it can do, and how it fits into your research workflow.
         </p>
+      </FadeInOnScroll>
 
-        <Button
+       <FadeInOnScroll delay={'1'}>
+         <Button
           variant="primary"
           size="lg"
           text={"md"}
@@ -83,6 +89,7 @@ const Faq = () => {
           Start researching
           <ButtonArrow />
         </Button>
+       </FadeInOnScroll>
 
       </Container>
 

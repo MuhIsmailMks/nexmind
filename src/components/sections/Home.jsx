@@ -5,10 +5,11 @@ import { Section } from "../ui/section";
 import { textVariants } from "../ui/text";
 import { Button } from "../ui/button";  
 import { bghero, heroimage } from "../../assets";
-import { ButtonArrow } from "../common/Icon";
+import { ButtonArrow } from "../common/Icon"; 
+import FadeInOnLoad from "../common/FadeInLoad";
 
-
-  
+ 
+   
 
 const Home = () => {
   return (
@@ -50,33 +51,46 @@ const Home = () => {
         layout={"flexcol"}
         className="hero-content lg:w-[1000px]"
       >
-        <h1 className={`text-center text-gradient-primary max-sm:w-[90%]`}>
-          <span className={`${textVariants({ intent: "heroTitle" })}`}>
+      
+      <FadeInOnLoad delay={'1'}>
+          <h1 className={`text-center text-gradient-primary max-sm:w-[90%]`}>
+          
+        <span className={`${textVariants({ intent: "heroTitle" })}`}>
             Accelerate your
           </span>
+          
           <br />
           <span className={`${textVariants({ intent: "heroTitle2" })}`}>
             Research with AI
           </span>
         </h1>
+      </FadeInOnLoad>
 
-        <p className={`${textVariants({ intent: "largetext", leading:'md' })}`}>
+      <FadeInOnLoad delay={'1.5'}>
+         <p className={`${textVariants({ intent: "largetext", leading:'md' })}`}>
           Find, understand, and organize research{" "}
           <span className="text-primary">reports in minutes</span>. Get insights
           from thousands of sources with a single click.
         </p>
+      </FadeInOnLoad>
 
-        <Container className="btns w-full" layout={"centered"} gap={"md"}>
-          <Button variant="primary" size="lg" text={'md'}  className="button-hover gap-3">
+      <Container className="btns w-full" layout={"centered"} gap={"md"}>
+          
+          <FadeInOnLoad direction="right" delay={'2'}>
+            <Button variant="primary" size="lg" text={'md'}  className="button-hover gap-3">
             Start researching
             <ButtonArrow />
-          </Button>
+            </Button>
+          </FadeInOnLoad>
 
-          <Button variant="outline" size="lg" text={'md'} className="button-hover gap-3">
+          <FadeInOnLoad direction="left" delay={'2'}>
+            <Button variant="outline" size="lg" text={'md'} className="button-hover gap-3">
             Watch how
             <ButtonArrow />
           </Button>
-        </Container>
+          </FadeInOnLoad>
+
+      </Container>
 
       </Container>
 
