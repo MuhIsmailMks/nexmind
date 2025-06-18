@@ -1,20 +1,20 @@
 import { Container } from "../ui/container";
 import { Section } from "../ui/section";
-import { textVariants } from "../ui/text"; 
-import {  PriceCard } from "../common/CardComponents";
+import { textVariants } from "../ui/text";
+import { PriceCard } from "../common/CardComponents";
 import { proIcon, starterIcon, teamIcon } from "../../assets";
-
+import FadeInOnScroll from "../common/FadeInScroll";
 
 const Price = () => {
   return (
-    <Section id={'pricing'} gap={"lg"} layout={"flexcolumn"}>
-       <Container
-          gap={"lg"}
-          padding={"md"}
-          layout={"flexcolcenter"}
-          className="about-content"
-        >
-
+    <Section id={"pricing"} gap={"lg"} layout={"flexcolumn"}>
+      <Container
+        gap={"lg"}
+        padding={"md"}
+        layout={"flexcolcenter"}
+        className="about-content"
+      >
+        <FadeInOnScroll>
           <h2
             className={`text-center text-gradient-primary ${textVariants({
               intent: "title",
@@ -22,7 +22,9 @@ const Price = () => {
           >
             Choose the plan that fits your research.
           </h2>
+        </FadeInOnScroll>
 
+        <FadeInOnScroll delay={".5"}>
           <p
             className={`lg:w-[900px] ${textVariants({
               intent: "largetext",
@@ -33,9 +35,13 @@ const Price = () => {
             Whether you're just getting started or need advanced tools for heavy
             research, we’ve got you covered.
           </p>
- 
-          <Container gap={"lg"} className={"price-cards-container justify-center lg:items-start"}>
+        </FadeInOnScroll>
 
+        <Container
+          gap={"lg"}
+          className={"price-cards-container justify-center lg:items-start"}
+        >
+          <FadeInOnScroll classname={'price-card-container md:w-[46%] lg:w-auto'} direction="zoom-in" delay={"1"}>
             <PriceCard
               nameprice={"Starter"}
               price={"0"}
@@ -47,7 +53,9 @@ const Price = () => {
                 "Ask up to 5 questions per document",
               ]}
             />
+          </FadeInOnScroll>
 
+          <FadeInOnScroll classname={'price-card-container md:w-[46%] lg:w-auto'} direction="zoom-in" delay={"1.5"}>
             <PriceCard
               nameprice={"Pro"}
               price={"19"}
@@ -61,7 +69,9 @@ const Price = () => {
                 "Save and export summaries",
               ]}
             />
+          </FadeInOnScroll>
 
+          <FadeInOnScroll classname={'price-card-container md:w-[46%] lg:w-auto'} direction="zoom-in" delay={"2"}>
             <PriceCard
               nameprice={"Team"}
               price={"59"}
@@ -75,11 +85,9 @@ const Price = () => {
                 "API access (beta)",
               ]}
             />
-
-          </Container>
-
+          </FadeInOnScroll>
         </Container>
-
+      </Container>
     </Section>
   );
 };

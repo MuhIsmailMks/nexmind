@@ -58,6 +58,7 @@ const Features = () => {
         {featuresData.map((item, index) => (
           <FadeInOnScroll
             key={index}
+            classname={'md:w-[45%] lg:w-auto'}
             direction="zoom-in"
             delay={index * 0.2}  
           >

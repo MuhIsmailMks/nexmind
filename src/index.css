@@ -212,16 +212,16 @@ background: linear-gradient(149.51deg, #000311 -5.15%, #313349 226.88%);
   border: 1px solid #222035; 
 }
 
-.price-cards-container .price-card:nth-child(1) {
+.price-cards-container .price-card-container:nth-child(1) .price-card {
   @apply bg-[#0b0a0f];
 }
 
-.price-cards-container .price-card:nth-child(2),
-.price-cards-container .price-card:nth-child(3) {
+.price-cards-container .price-card-container:nth-child(2) .price-card,
+.price-cards-container .price-card-container:nth-child(3) .price-card {
   background: linear-gradient(180deg, #353149 -95%, #0b0a0f 100%);
 }
 
-.price-cards-container .price-card:nth-child(1) .icon-container .icon {
+.price-cards-container .price-card-container:nth-child(1) .price-card .icon-container .icon {
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.02),
@@ -234,7 +234,7 @@ background: linear-gradient(149.51deg, #000311 -5.15%, #313349 226.88%);
     );
 }
 
-.price-cards-container .price-card:nth-child(2) .icon-container .icon {
+.price-cards-container .price-card-container:nth-child(2) .price-card .icon-container .icon {
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.1),
@@ -252,7 +252,7 @@ background: linear-gradient(149.51deg, #000311 -5.15%, #313349 226.88%);
       ) 
 }
 
-.price-cards-container .price-card:nth-child(3) .icon-container .icon {
+.price-cards-container .price-card-container:nth-child(3) .price-card .icon-container .icon {
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.02),

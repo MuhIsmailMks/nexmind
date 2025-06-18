@@ -59,13 +59,13 @@ const About = () => {
         </FadeInOnScroll>
 
         <Container layout={'centered'} gap={'sm'} className={'card-about-container '}>
-          <FadeInOnScroll delay={'1'}>
+          <FadeInOnScroll classname={'md:w-[45%] lg:w-auto'} delay={'1'}>
             <AboutCardComponents number={'1'} title={'Smart Document Analysis'} about={'Understand any paper in seconds — not hours.'} image={smartDocument}/>
           </FadeInOnScroll>
-          <FadeInOnScroll delay={'1.2'}>
+          <FadeInOnScroll classname={'md:w-[45%] lg:w-auto'} delay={'1.2'}>
             <AboutCardComponents number={'2'} title={'AI-Powered Summaries'} about={'Get clean, concise insights from long texts.'} image={summaries}/>
           </FadeInOnScroll>
-          <FadeInOnScroll delay={'1.4'}>
+          <FadeInOnScroll classname={'md:w-[45%] lg:w-auto'} delay={'1.4'}>
             <AboutCardComponents number={'3'} title={'Smart Document Analysis'} about={'Chat with your research documents like you would with an expert.'} image={askPDF}/>
           </FadeInOnScroll>
          
