@@ -16,14 +16,14 @@ const Navbar = () => {
 
       <Container layout="between" className={"w-full"} padding={'xmd'}>
 
-       <div className="logo flex-center md:gap-4">
-        <img src={logo} alt="" className="rounded-full w-9 md:w-14 aspect-square"/>
+       <div className="logo flex-center  gap-2 md:gap-4">
+        <img src={logo} alt="" className="rounded-full w-9 md:w-14 aspect-square "/>
          <a href="#" className={`font-semibold ${textVariants({ intent:'mediumtext' })}`}>
           NexMind
         </a>
        </div>
 
-        <nav className={`absolute lg:relative max-lg:left-0 max-lg:top-[100%] w-full lg:w-auto max-w-[100%] bg-[#0e0e0e5b]  backdrop-blur-md py-8  ${isMenuOpen ? "block" : "hidden"} lg:block`}>
+        <nav className={`absolute lg:relative max-lg:left-0 max-lg:top-[100%]   w-full lg:w-auto max-w-[100%] bg-[#0e0e0e5b]  backdrop-blur-md lg:py-8  duration-300 ${isMenuOpen ? "py-8 h-auto" : "h-[0px] overflow-hidden"} `}>
           <ul className={`flex-center gap-7 lg:gap-4 flex-wrap ${textVariants({ intent:'mediumtext' })}`}>
           <li>
             <a href="#about">
@@ -41,7 +41,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#testimonials">
+            <a href="#testimonials" className="">
               Testimonials
             </a>
           </li>
@@ -70,10 +70,10 @@ const Navbar = () => {
 
           <LineNav className={'lg-hidden'}/>
 
-          <div className="menu flex-center flex-col gap-1 w-7 aspect-square cursor-pointer lg-hidden"   onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <span></span>
-            <span></span>
-            <span></span>
+          <div className={`menu flex-center flex-col w-7 h-[20px] aspect-square cursor-pointer lg-hidden relative ${isMenuOpen ? "active" : ""} `} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <span className="top-0"></span>
+            <span className="top-[50%]"></span>
+            <span className="bottom-[1%]"></span>
           </div>
 
         </div>

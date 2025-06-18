@@ -2,7 +2,7 @@ import { Container } from "../ui/container";
 import { Section } from "../ui/section";
 import { textVariants } from "../ui/text"; 
 import {  PriceCard } from "../common/CardComponents";
-import { proIcon, teamIcon } from "../../assets";
+import { proIcon, starterIcon, teamIcon } from "../../assets";
 
 
 const Price = () => {
@@ -39,7 +39,7 @@ const Price = () => {
             <PriceCard
               nameprice={"Starter"}
               price={"0"}
-              icon={proIcon}
+              icon={starterIcon}
               about={"For Small Businesses"}
               benefits={[
                 "Basic AI summarization",

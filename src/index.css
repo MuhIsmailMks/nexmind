@@ -26,6 +26,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.mirror{
+ transform: scaleX(-1);
+ -webkit-transform: scaleX(-1);
+ -moz-transform: scaleX(-1);
+ -ms-transform: scaleX(-1);
+ -o-transform: scaleX(-1);
+}
+
 /* Global utility override using Tailwind's @apply */
 
 /* utils */
@@ -55,17 +63,25 @@ html {
   @apply lg:hidden lg:absolute lg:opacity-0;
 }
 
-.bg-blur-round {
-  @apply blur-3xl bg-[#2770FF1A] rounded-full w-[50%] lg:w-[40%] aspect-square max-w-[1500px];
+.bg-blur-round,
+.bg-blur-medium,
+.bg-blur-large {
+  @apply blur-3xl bg-[#2770FF1A] rounded-full
 }
 
-.bg-blur-large {
-  @apply blur-3xl bg-[#2770FF1A] rounded-full w-[90%] h-[240px] max-w-[1500px];
+.bg-blur-round {
+  @apply w-[50%] lg:w-[40%] aspect-square max-w-[1500px];
 }
 
 .bg-blur-medium {
-  @apply  blur-3xl bg-[#2770FF1A] rounded-full w-[50%] md:h-[240px] max-w-[1500px] z-0;
+  @apply w-[50%] md:h-[240px] max-w-[1500px] z-0;
 }
+
+
+.bg-blur-large {
+  @apply w-[90%] h-[240px] max-w-[1500px];
+}
+
  
 /* navbar */
 .header-navbar::before {
@@ -73,11 +89,22 @@ html {
   @apply left-0 top-0 w-full h-full backdrop-blur-md bg-[#0e0e0e5b] absolute lg:hidden;
 }
 
-.menu span {
-  @apply w-full h-1 bg-white
-     rounded-full;
+.menu span{
+  @apply absolute w-full h-[.5px] bg-gradient-to-l from-primary via-primary to-[#140886] rounded-full duration-200;
 }
 
+.menu.active span:nth-child(2){
+  @apply w-[0%] ;
+}
+
+.menu.active span:nth-child(1){
+  @apply rotate-45 top-[50%] ;
+}
+
+.menu.active span:nth-child(3){
+  @apply -rotate-45 bottom-[50%];
+}
+ 
 nav ul li {
   @apply w-full lg:w-auto flex justify-center;
 }
@@ -119,9 +146,27 @@ nav ul li {
 
 
 /* testimonials */
+.slide-caraousel-container::before,
+.slide-caraousel-container::after{
+  content: "";
+    @apply absolute top-0 h-full w-[10%] lg:w-[20%] z-[999];
+}
+
+.slide-caraousel-container::before{
+  @apply  left-0;
+  background: linear-gradient(90deg, #000510 44.11%, #00051093 79.08%, #00051000 109.08%);
+
+}
+
+.slide-caraousel-container::after{
+  @apply right-0; 
+  background: linear-gradient(-90deg, #000510 44.11%, #00051093 79.08%, #00051000 109.08%);
+}
+
 .testimoni-user{
   background: linear-gradient(253.29deg, #0A0822 27.17%, #050606 96.51%);
 }
+
 
 /* faq */
 .faq-accordion > :last-child{
@@ -139,7 +184,6 @@ background: linear-gradient(149.51deg, #000311 -5.15%, #313349 226.88%);
   @apply hidden absolute z-[-99] ;
   content: ""; 
 }
- 
 
 .faq-btn .plus-icon {
   display: block;

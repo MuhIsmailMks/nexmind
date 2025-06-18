@@ -1,8 +1,10 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
+ 
 import { cn } from "@/lib/utils";
 import React from "react"; 
+import { iconBtnSlider } from "../../assets";
 
 const CarouselContext = React.createContext(null)
 
@@ -153,14 +155,13 @@ function CarouselPrevious({
       data-slot="carousel-previous"
       variant={variant}
       size={size}
-      className={cn("absolute cursor-pointer flex-center w-[50px] h-[50px] bg-green-500 z-[999] rounded-full bottom-0", orientation === "horizontal"
-        ? "top-1/2 left-1/3 -translate-y-1/2"
+      className={cn("absolute cursor-pointer flex-center w-[50px] h-[50px] border-2 border-gray-700 z-[999] rounded-full bottom-0", orientation === "horizontal"
+        ? "top-1/2 left-[20%] lg:left-[43%] -translate-y-1/2"
         : "-top-12 left-1/2 -translate-x-1/2 rotate-90", className)}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
-      {...props}>
-      <ArrowLeft />
-      <span className="sr-only">Previous slide</span>
+      {...props}> 
+      <img src={iconBtnSlider} alt="iconBtnSlider" className="mirror"/> 
     </button>
   );
 }
@@ -178,14 +179,13 @@ function CarouselNext({
       data-slot="carousel-next"
       variant={variant}
       size={size}
-      className={cn("absolute cursor-pointer flex-center w-[50px] h-[50px] bg-green-500 z-[999] rounded-full bottom-0", orientation === "horizontal"
-        ? "top-1/2 right-1/3 -translate-y-1/2"
+      className={cn("absolute cursor-pointer flex-center w-[50px] h-[50px] border-2 border-gray-700 z-[999] rounded-full bottom-0", orientation === "horizontal"
+        ? "top-1/2 right-[20%] lg:right-[43%] -translate-y-1/2"
         : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90", className)}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}>
-      <ArrowRight />
-      <span className="sr-only">Next slide</span>
+     <img src={iconBtnSlider} alt="iconBtnSlider"/>
     </button>
   );
 }

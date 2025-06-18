@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { logo, starReview } from "../../assets";
+import { logo, profile, starReview } from "../../assets";
 import { useIsLargeScreen } from "../common/EmptySpaceSlide";
 
 
@@ -16,43 +16,36 @@ const testimonials = [
     name: "Kevin R",
     position: "Academic Researcher",
     text: "As a lecturer and researcher, I am greatly helped by the document-based summarization and Q&A features. This is not just an AI, but a truly intelligent research assistant.",
-    avatar: logo,
+    avatar: profile,
     stars: 5,
   },
   {
-    name: "Anna S",
-    position: "Data Scientist",
-    text: "I use this tool daily in my research workflow. It helps me find key insights faster and more accurately.",
+    name: "Michael T",
+    position: "Founder Startup",
+    text: "We use this tool for market research and literature studies. The UI is clean, the features are relevant, and the analysis results are very fast. It is perfect for teams that need efficiency.",
     avatar: logo,
     stars: 4,
   },
   {
-    name: "Anna S",
+    name: "Jonathan W",
+    position: "Freelance",
+    text: "I write scientific content and whitepapers. With this AI assistant, I can digest hundreds of pages of research much faster. It's part of my workflow now.",
+    avatar: logo,
+    stars: 5,
+  },
+  {
+    name: "Livia C.",
     position: "Data Scientist",
-    text: "I use this tool daily in my research workflow. It helps me find key insights faster and more accurately.",
+    text: "The interface is nice and clean, but some of my PDF files failed to process. Maybe the system is not yet stable for documents with more complex formats.",
     avatar: logo,
     stars: 3,
-  },
-  {
-    name: "Anna S",
-    position: "Data Scientist",
-    text: "I use this tool daily in my research workflow. It helps me find key insights faster and more accurately.",
-    avatar: logo,
-    stars: 5,
-  },
-  {
-    name: "Anna S",
-    position: "Data Scientist",
-    text: "I use this tool daily in my research workflow. It helps me find key insights faster and more accurately.",
-    avatar: logo,
-    stars: 5,
-  },
+  }, 
 ];
 
 export const TestimonialSLider = () => {
   const isLargeScreen = useIsLargeScreen()
   return (
-    <Carousel className="w-full max-w-full  ">
+    <Carousel className="slide-caraousel-container w-full max-w-full relative">
       <div className="slider-container w-full h-auto flex-center overflow-hidden">
         <CarouselContent className="lg:px-[1%]"> 
  
