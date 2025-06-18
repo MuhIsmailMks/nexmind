@@ -11,7 +11,7 @@ import arrow from './arrow.svg';
 import smartDocument from './smart-document.png';
 import summaries from './summaries.png';
 import askPDF from './ask-pdf.png';
-import dashboard from './dashboard.png';
+import dashboard from './interfaceImage.png';
 import tick from './tick.svg';
 import iconBtnSlider from './iconBtnSlider.svg';
 import starterIcon from './starter.svg';
