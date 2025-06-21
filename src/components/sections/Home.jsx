@@ -74,7 +74,7 @@ const Home = () => {
         </p>
       </FadeInOnLoad>
 
-      <Container className="btns w-full" layout={"centered"} gap={"md"}>
+      <Container className="btns w-full overflow-hidden" layout={"centered"} gap={"md"}>
           
           <FadeInOnLoad direction="right" delay={'2'}>
             <Button variant="primary" size="lg" text={'md'}  className="button-hover gap-3">
