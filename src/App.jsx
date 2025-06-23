@@ -13,12 +13,11 @@ import Interface from "./components/sections/Interface";
 import Features from "./components/sections/Features";
 import Testimonials from "./components/sections/Testimonials";
 import Faq from "./components/sections/Faq";
-import Price from "./components/sections/Price";
-import { AccordionDemo } from "./components/features/Coba";
+import Price from "./components/sections/Price"; 
 
 function App() { 
   return (
-    <main className="font-sans relative flex-center flex-col bg-page text-colortext gap-20 min-[1800px]:gap-40">
+    <main className="font-sans relative flex-center flex-col bg-page text-colortext gap-20 md:gap-[180px] min-[1800px]:gap-[220px]">
       <Navbar />
 
       <Home />
