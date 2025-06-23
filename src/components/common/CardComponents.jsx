@@ -74,7 +74,7 @@ export const PriceCard = ({
       padding={"md"}
       gap={"md"}
       className={
-        "price-card w-[360px] sm:w-[316px] max-w-[90%] h-auto  rounded-xl  gap-2 "
+        "price-card w-[360px] sm:w-[292px] max-w-[90%] h-auto rounded-xl  gap-2 p-[24px]"
       }
     >
       <Container className={"w-full"} layout={"flexcol"} gap={"sm"}>
@@ -92,7 +92,7 @@ export const PriceCard = ({
         </div>
 
         <h5 className={`w-full text-left `}>
-          <span className="text-smalltitle font-bold">${price}</span>
+          <span className="text-smalltitle font-bold pr-2">${price}</span>
           <span className={`${textVariants({ intent: "largetext" })}`}>
             /mo
           </span>
@@ -105,13 +105,13 @@ export const PriceCard = ({
 
       <Container className={"w-full"} layout={"flexcolcenter"} gap={"sm"}>
         {/* benefits */}
-        <Container className={"w-full gap-3"} variant={"flexcolcenter"}>
+        <Container className={"w-full gap-3  "} variant={"flexcolcenter"}>
           {benefits?.map((benefit, index) => (
             <div key={index} className="benefit flex gap-3 w-full">
               <div className="icon w-[24px]">
                 <img src={tick} alt="tick" className="w-full" />
               </div>
-              <p className={`w-full text-left leading-[1.3] text-m`}>
+              <p className={`w-full text-left leading-[1.3] text-m `}>
                 {benefit}
               </p>
             </div>
