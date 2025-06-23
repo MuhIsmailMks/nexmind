@@ -22,4 +22,6 @@ This project is a landing page designed to represent the topic of Artificial Int
 3. Modular and customizable UI components
 4. Clean and organized code structure
 
- 
+See the design: https://www.figma.com/design/ZlXrGMmRsqhwSYzshbIQgg/Nexmind-landingpage?node-id=0-1&p=f&t=tk4bFpm701sHEyAM-0
+
+See the site : https://nexmind-roan.vercel.app/
