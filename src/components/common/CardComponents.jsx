@@ -65,6 +65,7 @@ export const PriceCard = ({
   price,
   about,
   benefits,
+  nameBtnPrice,
   primaryBtn = false,
 }) => {
   return (
@@ -123,7 +124,7 @@ export const PriceCard = ({
           text={"md"}
           className="button-hover gap-3 mt-4"
         >
-          Get Started Free
+         {nameBtnPrice}
           <ButtonArrow />
         </Button>
       </Container>

@@ -64,13 +64,13 @@ const Navbar = () => {
  
           <LineNav/>
 
-          <Button asChild variant='primary' className={`gradient-primary px-2 py-1`}>
+          <Button asChild variant='primary' className={`gradient-primary px-2 py-1 duration-200 hover:scale-105`}>
             <a href="#get-demo" >Get Demo</a>
           </Button>
 
           <LineNav className={'lg-hidden'}/>
 
-          <div className={`menu flex-center flex-col w-7 h-[20px] aspect-square cursor-pointer lg-hidden relative ${isMenuOpen ? "active" : ""} `} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div className={`menu flex-center flex-col w-7 h-[20px] aspect-square cursor-pointer lg-hidden relative  ${isMenuOpen ? "active" : ""} `} onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <span className="top-0"></span>
             <span className="top-[50%]"></span>
             <span className="bottom-[1%]"></span>

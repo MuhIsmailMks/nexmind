@@ -45,6 +45,7 @@ const Price = () => {
             <PriceCard
               nameprice={"Starter"}
               price={"0"}
+              nameBtnPrice={'Get Started Free'}
               icon={starterIcon}
               about={"For Small Businesses"}
               benefits={[
@@ -59,6 +60,7 @@ const Price = () => {
             <PriceCard
               nameprice={"Pro"}
               price={"19"}
+              nameBtnPrice={'Upgrade to Pro'}
               icon={proIcon}
               about={"For Growing Businesses"}
               primaryBtn
@@ -75,6 +77,7 @@ const Price = () => {
             <PriceCard
               nameprice={"Team"}
               price={"59"}
+               nameBtnPrice={'Start Team Plan'}
               icon={teamIcon}
               about={"For Established Businesses"}
               benefits={[
