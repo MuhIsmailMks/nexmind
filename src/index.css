@@ -35,7 +35,6 @@ html {
 }
 
 /* Global utility override using Tailwind's @apply */
-
 /* utils */
 .flex-center {
   @apply flex justify-center items-center;
@@ -107,6 +106,23 @@ html {
  
 nav ul li {
   @apply w-full lg:w-auto flex justify-center;
+}
+
+.nav-link {
+  @apply relative decoration-0; 
+}
+
+.nav-link::after {
+  content: '';
+    @apply absolute w-full left-0 h-[2px] bg-white bottom-[-2px];
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1); 
+}
+
+.nav-link:hover::after { 
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
 }
 
 /* about */

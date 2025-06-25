@@ -37,11 +37,13 @@ const Home = () => {
         />
 
         {/* circle hero image */}
-        <img
+        <FadeInOnLoad direction="zoom-in" delay={'.5'} className={'w-[80%] sm:w-[70%] lg:w-[50%] max-w-[900px] aspect-square object-cover absolute'}>
+           <img
           src={heroimage}
           alt="heroimage"
-          className="w-[80%] sm:w-[70%] lg:w-[50%] max-w-[900px] aspect-square object-cover absolute"
+          className="w-full"
         />
+        </FadeInOnLoad>
 
       </Container>
 
