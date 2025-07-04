@@ -1,4 +1,3 @@
-import React from "react";
 import { Container } from "../ui/container";
 import { starter, tick } from "../../assets";
 import { textVariants } from "../ui/text";
@@ -10,7 +9,7 @@ export const AboutCardComponents = ({ number, title, about, image }) => {
   return (
     <Container
       layout={"flexcolcenter"}
-      className="card w-[90%] md:w-[350px] lg:w-[391px] h-[400px] pt-12"
+      className="card w-[90%] md:w-[350px] lg:w-[391px] h-[400px] pt-12 cursor-pointer duration-200 ease-in-out"
       padding={"lg"}
       gap={"sm"}
     >

@@ -101,7 +101,7 @@ const Navbar = () => {
             <span className="top-[50%]"></span>
             <span className="bottom-[1%]"></span>
           </div>
-           </FadeInOnLoad>
+          </FadeInOnLoad>
         </div>
 
       </Container>

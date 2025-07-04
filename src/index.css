@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss"; 
 
 @theme {
   --color-page: #000510;
@@ -35,6 +35,7 @@ html {
 }
 
 /* Global utility override using Tailwind's @apply */
+
 /* utils */
 .flex-center {
   @apply flex justify-center items-center;
@@ -128,7 +129,11 @@ nav ul li {
 /* about */
 .card-about-container .card {
   @apply bg-gradient-to-t from-[#493be46e] via-[#1511416e] to-[#06003a13] border-[1px] border-[#0e093a];
-  box-shadow: 1px 0px 8px 0px #0b016524 inset;
+  box-shadow: 1px 0px 8px 0px #0b016524 inset; 
+}
+
+.card-about-container .card:hover{
+  box-shadow: 0px 10px 15px 0px #321ee960; 
 }
 
 .card-about-container .card .number {
