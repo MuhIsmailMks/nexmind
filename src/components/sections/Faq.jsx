@@ -2,12 +2,9 @@ import { Container } from "../ui/container";
 import { Section } from "../ui/section";
 import { textVariants } from "../ui/text";
 import { Button } from "../ui/button";
-import { ButtonArrow } from "../common/Icon";
-import { LineWsize } from "../common/Line";
-import { AboutCardComponents, PriceCard } from "../common/CardComponents";
-import { min, plus } from "../../assets";
-import { FaqUser } from "../features/FaqUser";
+import { ButtonArrow } from "../common/Icon"; 
 import FadeInOnScroll from "../common/FadeInScroll";
+import FaqAccordion from "../features/FaqAccordion";
 
 
 const faqList = [
@@ -50,7 +47,7 @@ const faqList = [
 
 const Faq = () => {
   return (
-    <Section  gap={'mobilemd'} className={'py-10 justify-center'} layout={'flex'}>
+    <Section gap={'mobilemd'} className={'py-10 justify-center'} layout={'flex'}>
 
       <Container
         gap={"lg"} 
@@ -95,8 +92,9 @@ const Faq = () => {
 
       <Container gap={"lg"} 
         layout={"flexcol"}
-        className="about-faq w-[90%] md:w-[624px] lg:pr-10 z-10">
-           <FaqUser faqList={faqList} />
+        className="about-faq w-[90%] md:w-[624px] lg:pr-10 z-10"> 
+           {/* <FaqUser faqList={faqList}/> */}
+           <FaqAccordion faqList={faqList}/>
       </Container>
 
 

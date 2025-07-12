@@ -33,7 +33,7 @@ const Navbar = () => {
         </FadeInOnLoad>
 
         <nav
-          className={`absolute lg:relative max-lg:left-0 max-lg:top-[100%]   w-full lg:w-auto max-w-[100%] bg-[#0e0e0e5b]  backdrop-blur-md lg:py-8  duration-300 ${
+          className={`absolute lg:relative max-lg:left-0 max-lg:top-[100%] w-full lg:w-auto max-w-[100%] bg-[#0e0e0e5b]  backdrop-blur-md lg:py-8  duration-300 ${
             isMenuOpen ? "py-8 h-auto" : "h-[0px] overflow-hidden"
           } `}
         >
@@ -57,13 +57,13 @@ const Navbar = () => {
                   Testimonials
                 </a>
               </li>
-              <li>
+              <li className="relative">
                 <a href="#pricing" className="nav-link" >
                   Pro
-                  <span className="gradient-primary px-2 py-0.5 ml-2 text-[10px] z-10 relative">
+                </a>
+                 <span className="gradient-primary  px-2 py-0.5 ml-2 text-[10px] z-10 relative">
                     New
                   </span>
-                </a>
               </li>
             </ul>
           </FadeInOnLoad>
