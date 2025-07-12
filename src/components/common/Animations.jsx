@@ -1,4 +1,3 @@
-// src/components/animations/ScrollFade.jsx
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -33,14 +32,13 @@ useEffect(() => {
       scrollTrigger: {
         trigger: el,
         start: "top 85%",
-        toggleActions: "play none none none",
-        //   markers: true, 
+        toggleActions: "play none none none", 
       },
     }
   );
 
   return () => {
-    animation.scrollTrigger?.kill(); // ✅ hanya bunuh yang dibuat di animasi ini
+    animation.scrollTrigger?.kill(); 
   };
 }, [direction, delay]);
 
