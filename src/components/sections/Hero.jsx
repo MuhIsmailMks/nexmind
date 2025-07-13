@@ -7,7 +7,45 @@ import { bghero, heroimage } from "../../assets";
 import { ButtonArrow } from "../common/Icon"; 
 import FadeInOnLoad from "../common/FadeInLoad";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
+
 const Hero = () => {
+  useGSAP(() => {
+    const heroSplit = new SplitText(".hero-title", {
+      type: "chars, words",
+    });
+
+    const tl = gsap.timeline();
+ 
+    tl.from(heroSplit.chars, {
+      yPercent: 200,
+      duration: 1,
+      delay: 1,
+      ease: "expo.out",
+      stagger: 0.07,
+    });
+ 
+    tl.fromTo(
+      ".text-gradient-primary",
+      { opacity: 0 },
+      { opacity: 1, duration: .1, ease: "power2.out" },
+      "+=0.5"
+    );
+ 
+    tl.to(
+      ".hero-title",
+      {
+        opacity: 0,
+        duration: 0.8,
+        ease: "power1.out",
+      },
+      "+=0"  
+    );
+
+  }, []);
+
   return (
     <Section gap={"lg"} layout={"centered"} className={"py-20 md:py-40 mt-[-50px] min-[1700px]:mt-0  "}>
       
@@ -18,27 +56,27 @@ const Hero = () => {
       >
         <img
           src={bghero}
-          alt=""
+          alt="bg hero"
           className="w-[100%] xl:w-[200%] h-[50%] xl:h-[100%] object-cover"
         />
         <img
           src={bghero}
-          alt=""
+          alt="bg hero"
           className="w-[100%] xl:w-[200%] h-[50%] xl:h-[100%] object-cover absolute bottom-[0%] lg:hidden"
         />
         <img
           src={bghero}
-          alt=""
+          alt="bg hero"
           className="w-[100%] xl:w-[200%] h-[50%] xl:h-[100%] object-cover absolute top-[0%] lg:hidden"
         />
 
         {/* circle hero image */}
         <FadeInOnLoad direction="zoom-in" delay={'.5'} className={'w-[80%] sm:w-[70%] lg:w-[50%] max-w-[900px] aspect-square object-cover absolute'}>
            <img
-          src={heroimage}
-          alt="heroimage"
-          className="w-full"
-        />
+            src={heroimage}
+            alt="heroimage"
+            className="w-full"
+          />
         </FadeInOnLoad>
 
       </Container>
@@ -50,19 +88,31 @@ const Hero = () => {
         className="hero-content lg:w-[1000px]"
       >
       
-      <FadeInOnLoad delay={'1'}>
-          <h1 className={`text-center text-gradient-primary max-sm:w-[90%]`}>
+      <h1 className={`text-center overflow-hidden max-sm:w-[90%] flex-center leading-0`}>
           
-        <span className={`${textVariants({ intent: "heroTitle" })}`}>
-            Accelerate your
+       <div className="relative hero-title z-10">
+          <span className={`${textVariants({ intent: "heroTitle" })}`}>
+              Accelerate your
           </span>
-          
-          <br />
+            
+            <br />
           <span className={`${textVariants({ intent: "heroTitle2" })}`}>
-            Research with AI
+              Research with AI
           </span>
-        </h1>
-      </FadeInOnLoad>
+       </div>
+          
+       <div className="absolute  text-gradient-primary ">
+          <span className={` ${textVariants({ intent: "heroTitle" })}`}>
+             Accelerate your
+          </span>
+            
+            <br />
+          <span className={`${textVariants({ intent: "heroTitle2" })}`}>
+              Research with AI
+          </span>
+       </div>
+
+      </h1>
 
       <FadeInOnLoad delay={'1.5'}>
          <p className={`${textVariants({ intent: "largetext", leading:'md' })}`}>

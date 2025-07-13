@@ -115,7 +115,7 @@ nav ul li {
 
 .nav-link::after {
   content: '';
-    @apply absolute w-full left-0 h-[2px] bg-white bottom-[-2px];
+    @apply absolute w-full left-0 h-[1px] bg-white bottom-[-2px];
     transform-origin: 100% 50%;
     transform: scaleX(0);
     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1); 
