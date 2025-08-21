@@ -11,43 +11,31 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Interface = () => {
-  const containerImageRef = useRef(null);
   const imageRef = useRef(null);
 
-  useEffect(() => {
-    if (containerImageRef.current && imageRef.current) {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerImageRef.current,
-          toggleActions: "restart none none reset",
-        },
-      });
-
-      tl.set(containerImageRef.current, { autoAlpha: 1 });
-      tl.from(containerImageRef.current, {
-        xPercent: -100,
-        duration: 1.5,
-        ease: "power2.out",
-      });
-      tl.from(imageRef.current, {
-        xPercent: 100,
-        scale: 1.3,
-        duration: 1.5,
-        delay: -1.5,
-        ease: "power2.out",
-      });
-    }
-  }, []);
+useEffect(() => {
+  if (imageRef.current) {
+    ScrollTrigger.create({
+      trigger: imageRef.current,
+      start: "top 100%",
+      onEnter: () => {
+        gsap.delayedCall(1.5, () => {   
+          imageRef.current.classList.add("active");
+        });
+      }, 
+    });
+  }
+}, []);
 
   return (
-    <Section id={"interface"} gap={"lg"} layout={"flexcolumn"}>
+    <Section id={"interface"} layout={"flexcolumn"}>
       <Container
         gap={"lg"}
         padding={"md"}
         layout={"flexcolcenter"}
         className="hero-content "
       >
-        <FadeInOnScroll delay={".5"}>
+        <FadeInOnScroll>
           <h2
             className={`text-center text-gradient-primary ${textVariants({
               intent: "title",
@@ -73,15 +61,12 @@ const Interface = () => {
           </p>
         </FadeInOnScroll>
 
-        <div className="image w-[100%] sm:w-[80%] xl:w-[1300px] h-[700px]  flex justify-center">
-           <div ref={containerImageRef} className="reveal flex-center visible overflow-hidden w-[90%] relative">
-                <img
-                ref={imageRef}
-                src={dashboard}
-                alt="dashboard"
-                className="w-[90%] object-cover dashboard-image"
-              />
-           </div>
+        <div ref={imageRef} className="image relative w-full flex justify-center py-14">
+            <img 
+              src={dashboard}
+              alt="dashboard"
+              className="w-[90%] md:w-[80%] object-cover dashboard-image "
+            />
         </div>
       </Container>
     </Section>
